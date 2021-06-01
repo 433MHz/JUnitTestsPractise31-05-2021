@@ -2,6 +2,9 @@ package com.healthycoderapp;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 class BMICalculatorTest {
@@ -66,5 +69,35 @@ class BMICalculatorTest {
 				() -> assertTrue(isFirstRecomended),
 				() -> assertFalse(isSecondRecomended));
 		
+	}
+	
+	@Test
+	void check_if_arrays_equals_should_return_true() {
+//		given
+		List<String> listOfStringsFirst = new ArrayList<>();
+		listOfStringsFirst.add("jeden");
+		listOfStringsFirst.add("dwa");
+		listOfStringsFirst.add("three");
+		
+		List<String> listOStringsSecond = new ArrayList<>();
+		listOStringsSecond.add("jeden");
+		listOStringsSecond.add("dwa");
+		listOStringsSecond.add("three");
+		
+		
+//		then
+		assertEquals(listOfStringsFirst, listOStringsSecond);
+	}
+	
+	
+	@Test
+	void check_if_list_equals_should_return_true() {
+//		given
+		double[] firstList = {1.1, 2.2, 3.3};
+		double[] secondList = {1.1, 2.2, 3.3};
+		
+//		then
+		
+		assertArrayEquals(firstList, secondList);
 	}
 }
