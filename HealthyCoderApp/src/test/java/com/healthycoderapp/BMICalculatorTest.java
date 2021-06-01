@@ -47,4 +47,24 @@ class BMICalculatorTest {
 		assertEquals(true, isRecomended);
 		
 	}
+	
+	@Test
+	void return_true_when_diet_recomended_and_false_when_not() {
+//		given
+		double firstWeight = 95;
+		double firstHeight = 1.72;
+		
+		double secondWeight = 70;
+		double secondHeight = 1.72;
+		
+//		when
+		boolean isFirstRecomended = BMICalculator.isDietRecommended(firstWeight, firstHeight);
+		boolean isSecondRecomended = BMICalculator.isDietRecommended(secondWeight, secondHeight);
+		
+//		then
+		assertAll(
+				() -> assertTrue(isFirstRecomended),
+				() -> assertFalse(isSecondRecomended));
+		
+	}
 }
