@@ -33,4 +33,18 @@ class BMICalculatorTest {
 		assertFalse(isRecomended);
 		
 	}
+	
+	@Test
+	void check_if_return_is_true() {
+//		given
+		double weight = 95;
+		double height = 1.72;
+		
+//		when
+		boolean isRecomended = BMICalculator.isDietRecommended(weight, height);
+		
+//		then
+		assertEquals(true, isRecomended);
+		
+	}
 }
